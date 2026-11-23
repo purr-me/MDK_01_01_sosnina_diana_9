@@ -24,5 +24,15 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void LightWarrior_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void HeavyWarrior_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

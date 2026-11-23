@@ -6,7 +6,29 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800">
-    <Grid>
-        
+    <Grid
+        Background="#FF424242">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10" Background="#FFFDFDFD" MouseDown="LightWarrior_Click">
+            <Grid>
+                <Label Content="Воин в легких доспехах" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Margin="0,20,0,0"/>
+                <Image Margin="10,60,10,100" Source="Images\легкиедоспехи.jpg"/>
+                <Label x:Name="lHealthLight" Content="Здоровье: 100" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18" Margin="0,0,0,50"/>
+                <Label Content="Нажмите, чтобы ударить" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" Margin="0,0,0,20"/>
+            </Grid>
+        </Border>
+
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10" Background="#FFFDFDFD" Grid.Column="1" MouseDown="HeavyWarrior_Click">
+            <Grid>
+                <Label Content="Воин в тяжелых доспехах" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Margin="0,20,0,0"/>
+                <Image Margin="10,60,10,100" Source="Images\тяжелыедоспехи.jpg"/>
+                <Label x:Name="lHealthHeavy" Content="Здоровье: 100" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18" Margin="0,0,0,50"/>
+                <Label Content="Нажмите, чтобы ударить" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" Margin="0,0,0,20"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
