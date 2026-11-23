@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Classes;
 
 namespace WpfApp1
 {
@@ -20,19 +21,36 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private WarriorLight lightWarrior = new WarriorLight(100);
+        private WarriorHeavy heavyWarrior = new WarriorHeavy(100);
+
         public MainWindow()
         {
             InitializeComponent();
+            Update();
+        }
+
+        private void Update()
+        {
+            lHealthLight.Content = $"Здоровье: {lightWarrior.Health}";
+            lHealthHeavy.Content = $"Здоровье: {heavyWarrior.Health}";
         }
 
         private void LightWarrior_Click(object sender, MouseButtonEventArgs e)
         {
+            if (lightWarrior.Health <= 0) return;
 
+            lightWarrior.TakeDamage(20);
+            Update();
         }
 
         private void HeavyWarrior_Click(object sender, MouseButtonEventArgs e)
         {
+            if (heavyWarrior.Health <= 0) return;
 
+            heavyWarrior.TakeDamage(20);
+            Update();
         }
     }
 }
