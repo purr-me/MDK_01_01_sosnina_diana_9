@@ -39,16 +39,12 @@ namespace WpfApp1
 
         private void LightWarrior_Click(object sender, MouseButtonEventArgs e)
         {
-            if (lightWarrior.Health <= 0) return;
-
             lightWarrior.TakeDamage(20);
             Update();
         }
 
         private void HeavyWarrior_Click(object sender, MouseButtonEventArgs e)
         {
-            if (heavyWarrior.Health <= 0) return;
-
             heavyWarrior.TakeDamage(20);
             Update();
         }
